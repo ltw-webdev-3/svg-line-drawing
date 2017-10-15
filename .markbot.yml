@@ -1,0 +1,79 @@
+repo: 'svg-line-drawing'
+canvasCourse: 'web-dev-3'
+
+inherit:
+  - naming-restrict-live
+  - git-2
+  - html
+  - css
+
+html:
+  - path: 'index.html'
+    has:
+      - ['link[href*="Unica+One"]', 'The Google Font, `Unica One`, is missing']
+      - 'div.embed.embed-16by9'
+      - check: 'div.embed > div.embed-item'
+        message: 'It’s better to put the `.embed-item` class onto a `<div>` that surrounds the SVG, instead of on the SVG itself, because the SVG does weird things otherwise'
+      - 'svg.img-flex'
+      - 'svg > rect'
+      - 'svg > g > path'
+      - '#narwhal-body'
+      - '#narwhal-eye'
+      - '#rainbow-violet'
+      - '#rainbow-indigo'
+      - '#rainbow-blue'
+      - '#rainbow-green'
+      - '#rainbow-yellow'
+      - '#rainbow-orange'
+      - '#rainbow-red'
+    hasNot:
+      - check: 'svg.embed-item'
+        message: 'It’s better to put the `.embed-item` class onto a `<div>` that surrounds the SVG, instead of on the SVG itself, because the SVG does weird things otherwise'
+    search:
+      - 'Unicorns of the sea'
+
+css:
+  - path: 'css/main.css'
+    has:
+      - ['#narwhal-body', ['stroke-dashoffset', 'stroke-dasharray']]
+      - ['#narwhal-eye', 'opacity']
+      - ['#rainbow-violet', ['stroke-dashoffset', 'stroke-dasharray']]
+      - ['#rainbow-indigo', ['stroke-dashoffset', 'stroke-dasharray']]
+      - ['#rainbow-blue', ['stroke-dashoffset', 'stroke-dasharray']]
+      - ['#rainbow-green', ['stroke-dashoffset', 'stroke-dasharray']]
+      - ['#rainbow-yellow', ['stroke-dashoffset', 'stroke-dasharray']]
+      - ['#rainbow-orange', ['stroke-dashoffset', 'stroke-dasharray']]
+      - ['#rainbow-red', ['stroke-dashoffset', 'stroke-dasharray']]
+    search:
+      - '@keyframes'
+      - 'animation'
+      - 'font\-family\: "Unica One"\, sans\-serif'
+  - path: 'css/modules.css'
+    locked: true
+  - path: 'css/grid.css'
+    locked: true
+  - path: 'css/type.css'
+    locked: true
+
+screenshots:
+  - path: 'index.html'
+    label: 'Before'
+    sizes: [1440]
+  - path: 'index.html'
+    label: 'After'
+    sizes: [1440]
+    allowAnimations: true
+    before: |
+      on('#rainbow-violet', 'animationend', done);
+
+functionality:
+  - path: 'index.html'
+    tests:
+      - |
+        let narwhal = $('#narwhal-body');
+        let oldStroke = css(narwhal).strokeDashoffset;
+
+        on(narwhal, 'animationend', () => {
+          if (css(narwhal).strokeDashoffset == oldStroke) return fail('The `stroke-dashoffset` of the narwhal don’t animate');
+          pass();
+        });
