@@ -2,6 +2,7 @@
 summary: 'An exercise to create a banner graphic while practicing animating SVG strokes using stroke-dashoffset.'
 time: '1 hour'
 deliverables: '1 HTML file, 4 CSS files, images'
+download: "https://assets.learn-the-web.algonquindesign.ca/web-dev-3/svg-line-drawing-download.zip"
 ---
 
 # SVG line drawing
