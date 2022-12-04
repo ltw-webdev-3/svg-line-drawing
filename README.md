@@ -74,7 +74,7 @@ Illustrator will give you the length of the stroke in pixels, to use in both `st
 Visually match the images in the “screenshots” folder and create the interaction shown in the linked video.
 
 - Final screenshots in the “screenshots” folder.
-- [**Watch this video to see how it interacts.**](https://videos.learntheweb.courses/playlists/web-dev-3/svg-line-drawing.mp4)
+- [**Watch this video to see how it interacts.**](https://video-assets.learntheweb.courses/web-dev-3/svg-line-drawing.mp4)
   *This video shows the browser being refreshed a few times—the components only need to animate in once.*
 
 ---
