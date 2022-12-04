@@ -37,8 +37,8 @@ With `animation` we slowing reduce the `dashoffset` down to `0` causing the line
 
 There are two important properties:
 
-- `stroke-dasharray` — This needs to be set to the length of the stroke itself.
-- `stroke-dashoffset` — This also needs to be set to the length of the stroke initially, but then is animated to a length of `0` using `@keyframes`
+- `stroke-dasharray` — This needs to be set to the length of the stroke itself.
+- `stroke-dashoffset` — This also needs to be set to the length of the stroke initially, but then is animated to a length of `0` using `@keyframes`
 
 You’ll end up with CSS that looks like this:
 
@@ -74,7 +74,7 @@ Illustrator will give you the length of the stroke in pixels, to use in both `st
 Visually match the images in the “screenshots” folder and create the interaction shown in the linked video.
 
 - Final screenshots in the “screenshots” folder.
-- [**Watch this video to see how it interacts.**](https://youtu.be/s4JC50oFfgA)
+- [**Watch this video to see how it interacts.**](https://videos.learntheweb.courses/playlists/web-dev-3/svg-line-drawing.mp4)
   *This video shows the browser being refreshed a few times—the components only need to animate in once.*
 
 ---
